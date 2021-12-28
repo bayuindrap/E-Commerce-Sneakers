@@ -1,0 +1,22 @@
+{
+    "dataUser": [
+        {
+            "username": "admin",
+            "email": "admin@mail.com",
+            "password": "admin",
+            "role": "admin",
+            "id": 1,
+            "status": "active",
+            "cart": []
+        },
+        {
+            "username": "bayu",
+            "email": "bayu@mail.com",
+            "password": "bayu",
+            "role": "user",
+            "id": 2,
+            "status": "active",
+            "cart": []
+        }
+    ]
+}
