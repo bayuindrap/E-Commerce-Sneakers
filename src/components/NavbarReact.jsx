@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, NavLink, UncontrolledDropdown, DropdownMenu, DropdownItem, NavbarText, DropdownToggle } from "reactstrap";
-
+import { Button, Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, NavLink, UncontrolledDropdown, DropdownMenu, DropdownItem, NavbarText, DropdownToggle, Spinner } from "reactstrap";
+import { logoutAction } from "../redux/actions/userAction";
+import { connect } from "react-redux";
 
 
 class NavbarComponent extends React.Component {
@@ -24,7 +25,7 @@ class NavbarComponent extends React.Component {
             //     </Nav>
             // </Navbar>
             //className="shadow bg-white rounded"
-            <Navbar expand="md"color="dark" >
+            <Navbar expand="md" color="dark" >
                 <NavbarBrand>
                     <Link to="/">
                         <img src="https://i.postimg.cc/ZKtbm455/index.png" alt="logo-brand" width="35px" />
@@ -54,30 +55,73 @@ class NavbarComponent extends React.Component {
                             </NavLink>
                         </NavItem>
                     </Nav>
-                    
+                    {
+                        this.props.loading ?
+                            <Spinner animation="border" style={{ marginLeft: "auto", marginRight: 10 }}>
+                                Loading...
+                            </Spinner>
+                            :
+
+                            this.props.username
+                                ?
+                                <UncontrolledDropdown style={{ marginLeft: "auto" }}>
+                                    <DropdownToggle caret nav size="sm" className="d-flex align-items-center" style={{ color: "green" }}>
+                                        Hello, {this.props.username}
+                                    </DropdownToggle>
+                                    <DropdownMenu>
+                                        <DropdownItem onClick={() => {
+                                            localStorage.removeItem("data");
+                                            this.props.logoutAction();
+                                        }}>
+                                            LOGOUT
+                                        </DropdownItem>
+                                    </DropdownMenu>
+
+                                </UncontrolledDropdown>
+                                :
+
+                                <Nav style={{ marginLeft: "auto" }}>
+                                    <NavItem>
+                                        <Link className="nav-link" to="/register-page" style={{ color: "white" }}>
+                                            Register
+                                        </Link>
+                                    </NavItem>
+                                    <NavItem>
+                                        <Link className="nav-link" to="/login-page" style={{ color: "#159953" }}>
+                                            Login
+                                        </Link>
+                                    </NavItem>
+                                </Nav>
+
+                    }
+
+                    {/* 
                     <Link to="/login-page" style={{ marginLeft: "auto" }}>
                         <Button type="button" color="success">Sign In</Button>
                     </Link>
                     <div style={{ float: "right" }}>
 
                         <Nav >
-                            {/* <NavItem>
-                                <Link className="nav-link" to="/Login-Page" style={{ color: "green" }}>
-                                    Login
-                                </Link>
-                            </NavItem> */}
                             <NavItem>
                                 <Link className="nav-link" to="/register-page" style={{ color: "green" }}>
                                     Register
                                 </Link>
                             </NavItem>
                         </Nav>
-                    </div>
+                    </div> */}
+
+
 
                 </Collapse>
             </Navbar>
         );
     }
 }
+const mapToProps = (state) => {
+    return {
+        username: state.userReducer.username,
+        role: state.userReducer.role
+    }
+}
 
-export default NavbarComponent;
+export default connect(mapToProps, { logoutAction })(NavbarComponent);
