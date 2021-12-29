@@ -25,7 +25,7 @@ class NavbarComponent extends React.Component {
             //     </Nav>
             // </Navbar>
             //className="shadow bg-white rounded"
-            <Navbar expand="md" color="dark" >
+            <Navbar expand="md" color="dark" fixed="top">
                 <NavbarBrand>
                     <Link to="/">
                         <img src="https://i.postimg.cc/ZKtbm455/index.png" alt="logo-brand" width="35px" />
@@ -35,7 +35,7 @@ class NavbarComponent extends React.Component {
                 <Collapse isOpen={this.state.openCollapse} navbar>
                     <Nav>
                         <NavItem>
-                            <Link className="nav-link" to="/products" style={{ color: "#159953" }}>
+                            <Link className="nav-link" to="/product-page" style={{ color: "#159953" }}>
                                 Sneakers
                             </Link>
                         </NavItem>
