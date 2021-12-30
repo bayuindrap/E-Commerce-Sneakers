@@ -40,7 +40,7 @@ class RegisPage extends React.Component {
                 status: "active",
                 cart: []
             }).then((res) => {
-                alert("REGIS BERHASIL✔")
+                alert(`${this.usernameRegis.value} ,Registrasi Berhasil✔`)
     
             }).catch((error) => {
                 console.log(error)
@@ -55,11 +55,14 @@ class RegisPage extends React.Component {
         return (
             <div>
                 <h1 className="text-center" style={{color: "green"}}>REGISTER</h1>
+                <h1 className="text-center" style={{color: "green"}}>REGISTER</h1>
+                
+                
                 <div className="row">
                     <div className="col-5 row-3 mt-10" >
-                        <img src="https://www.kickavenue.com/static/media/register-left.ae5efdee.png" style={{ width: 680, marginTop: 60, marginLeft: 30 }} />
+                        <img src="https://www.kickavenue.com/static/media/register-left.ae5efdee.png" style={{ width: 680, marginTop: 60, marginLeft: 100 }} />
                     </div>
-                    <div className="col-6 pl-5" style={{ paddingTop: 180, paddingLeft: 100 }}>
+                    <div className="col-6 pl-5" style={{ paddingTop: 180, paddingLeft: 150 }}>
 
                         <FormGroup>
                             <Label for="textUsername">Username</Label>

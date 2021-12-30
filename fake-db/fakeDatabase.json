@@ -44,6 +44,24 @@
       "status": "active",
       "cart": [],
       "id": 5
+    },
+    {
+      "username": "test22",
+      "email": "test22@mail.com",
+      "password": "test",
+      "role": "user",
+      "status": "active",
+      "cart": [],
+      "id": 6
+    },
+    {
+      "username": "testregis",
+      "email": "testregis@mail.com",
+      "password": "test",
+      "role": "user",
+      "status": "active",
+      "cart": [],
+      "id": 7
     }
   ],
   "products": [
@@ -528,7 +546,7 @@
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzEzMTEvZGMyNDFmYTc4ZTE0OTE5MmZjYTgzYTU4MzYxY2QzZWQucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1MDB9LCJ3ZWJwIjp7InF1YWxpdHkiOjUwfX19",
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzEzMTEvM2ZjZTExYzIxODk1YmU0ZDVhYjQxZDVjMGE1ZGViM2YucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1MDB9LCJ3ZWJwIjp7InF1YWxpdHkiOjUwfX19"
       ],
-      "id": 21 
+      "id": 21
     },
     {
       "nama": "Air Jordan 1 High OffWhite Chicago",
@@ -551,7 +569,7 @@
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzIzMi9lYmZjNGZkNjZhOWQ4NWIzOGMzNjgzMzA0MDE4ODQwMS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH0sIndlYnAiOnsicXVhbGl0eSI6NTB9fX0=",
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzIzMi80NmEwMjhhMjU3YWFhM2I2MGM1NmZmZjhlOTdmNGQ4MC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH0sIndlYnAiOnsicXVhbGl0eSI6NTB9fX0="
       ],
-      "id":22 
+      "id": 22
     },
     {
       "nama": "Air Jordan 1 High Not for Resale",
@@ -597,7 +615,7 @@
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzg3ODMvNTRjM2IzN2JhYmQzOGFhM2RjNTNhZWYxYzdkOTY2YzMucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1MDB9LCJ3ZWJwIjp7InF1YWxpdHkiOjUwfX19",
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzg3ODMvNmEyODgxNjM1ZGM2ZDU4NTIxYTVmZTAxYjI5Yjc2MDcucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1MDB9LCJ3ZWJwIjp7InF1YWxpdHkiOjUwfX19"
       ],
-      "id": 24 
+      "id": 24
     },
     {
       "nama": "Air Jordan 1 High Rookie of The Year",
@@ -620,7 +638,7 @@
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzI0MzUvMDllYjJlMDItZjU3Yy00MmFjLWJiMWEtNDE5NWJlNzBjOWE3LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH0sIndlYnAiOnsicXVhbGl0eSI6NTB9fX0=",
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzI0MzUvMTA2MWY3OTAtYzM5OS00ZGU2LWJiNDQtMzkxZmRhOTNhZDk4LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH0sIndlYnAiOnsicXVhbGl0eSI6NTB9fX0="
       ],
-      "id": 25 
+      "id": 25
     },
     {
       "nama": "Air Jordan 1 High Fragment x Travis Scott",
@@ -666,7 +684,7 @@
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzI2NDkvNWFiOGIzNGYtOTI5OC00MTMxLWE0ZTktMzQ4Mjc2OWM2ZjA0LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH0sIndlYnAiOnsicXVhbGl0eSI6NTB9fX0=",
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzI2NDkvM2UyMzU5NzQtNzY4OS00YmYxLTkxYzItN2NjNzU0NzUwZmMwLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH0sIndlYnAiOnsicXVhbGl0eSI6NTB9fX0="
       ],
-      "id": 27 
+      "id": 27
     },
     {
       "nama": "Air Jordan 1 High Blue Toe",
@@ -919,7 +937,7 @@
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzcwNzkvMWFhOTRmY2ZkZGNiYjgzZDlmZDFiMGMyN2YwMmZiZmQucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1MDB9LCJ3ZWJwIjp7InF1YWxpdHkiOjUwfX19",
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzcwNzkvMWQ3ZmYyOTc5NDRmNDBlYTY4NmIzZDFiYmM1M2FlOWYucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1MDB9LCJ3ZWJwIjp7InF1YWxpdHkiOjUwfX19"
       ],
-      "id": 38 
+      "id": 38
     },
     {
       "nama": "Air Force 1 Low Supreme Wheat",
@@ -1287,7 +1305,7 @@
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzgxOTgvZWQ2ZGU0NzQtZjVjOS00NjI0LWJmNGUtODQ3NDMwZGEyMzE4LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTAwfSwid2VicCI6eyJxdWFsaXR5Ijo1MH19fQ==",
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzgxOTgvMmMxZTFhMGEtZjhiYy00ZDc4LWE5MTktOWZjY2FlYzBlMTZmLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTAwfSwid2VicCI6eyJxdWFsaXR5Ijo1MH19fQ=="
       ],
-      "id": 54 
+      "id": 54
     },
     {
       "nama": "SB Dunk Low Supreme Black",
@@ -1402,7 +1420,7 @@
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzE5MDM4LzliYzFjMTE4YWExODU0YzdiMDc4NThhMWZhN2JkZmI1LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTAwfSwid2VicCI6eyJxdWFsaXR5Ijo1MH19fQ==",
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzE5MDM4L2E3NTczYmUxZTFlZGY0ZmFkNzdhODg3YTFiMDJhZWY3LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTAwfSwid2VicCI6eyJxdWFsaXR5Ijo1MH19fQ=="
       ],
-      "id":59 
+      "id": 59
     },
     {
       "nama": "SB Dunk Low Reese Forbes Denim",
@@ -1425,7 +1443,7 @@
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzI1MzI0LzNiZDlhM2UzY2M5NzA5ZjIwY2EyMWQ1NDU4ZmNlYzVlLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTAwfSwid2VicCI6eyJxdWFsaXR5Ijo1MH19fQ==",
         "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzI1MzI0LzU0MzEyNTVhODQ0ODY0M2IxOTRlYWUyMGYxYjI0YTYzLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTAwfSwid2VicCI6eyJxdWFsaXR5Ijo1MH19fQ=="
       ],
-      "id": 60 
+      "id": 60
     },
     {
       "nama": "SB Dunk Low Dead Bears Yellow",
@@ -1772,9 +1790,5 @@
       ],
       "id": 75
     }
-
-
   ]
-
-  
 }
