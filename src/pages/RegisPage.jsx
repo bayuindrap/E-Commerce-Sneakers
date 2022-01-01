@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, FormGroup, Label, Input, Button, InputGroup, InputGroupText } from "reactstrap";
+import { Card, FormGroup, Label, Input, Button, InputGroup, InputGroupText, Alert } from "reactstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../helper";
@@ -41,7 +41,19 @@ class RegisPage extends React.Component {
                 cart: []
             }).then((res) => {
                 alert(`${this.usernameRegis.value} ,Registrasi Berhasil✔`)
-    
+                // <div>
+                //     <Alert color="primary">
+                //         This is a primary alert with{' '}
+                //         <a
+                //             className="alert-link"
+                //             href="#"
+                //         >
+                //             an example link
+                //         </a>
+                //         . Give it a click if you like.
+                //     </Alert>
+                // </div>
+
             }).catch((error) => {
                 console.log(error)
             })
@@ -54,10 +66,10 @@ class RegisPage extends React.Component {
         // https://i.postimg.cc/mkSyFtsy/undraw-secure-login-pdn4.png
         return (
             <div>
-                <h1 className="text-center" style={{color: "green"}}>REGISTER</h1>
-                <h1 className="text-center" style={{color: "green"}}>REGISTER</h1>
-                
-                
+                <h1 className="text-center" style={{ color: "green" }}>REGISTER</h1>
+                <h1 className="text-center" style={{ color: "green" }}>REGISTER</h1>
+
+
                 <div className="row">
                     <div className="col-5 row-3 mt-10" >
                         <img src="https://www.kickavenue.com/static/media/register-left.ae5efdee.png" style={{ width: 680, marginTop: 60, marginLeft: 100 }} />
@@ -80,7 +92,7 @@ class RegisPage extends React.Component {
                             <Label for="textPassword">Password</Label>
                             <InputGroup>
                                 <Input type="password" id="textEmail" placeholder="Input Password"
-                                    innerRef={(element) => this.passwordRegis = element}  type={this.state.passType}/>
+                                    innerRef={(element) => this.passwordRegis = element} type={this.state.passType} />
                                 <InputGroupText style={{ cursor: "pointer" }} onClick={this.showPass}>
                                     {this.state.passShow}
                                 </InputGroupText>

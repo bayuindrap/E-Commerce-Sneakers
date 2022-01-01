@@ -39,22 +39,23 @@ class ProductPage extends React.Component {
 
 
     printProduct = () => {
-        let {page} = this.state
-        return this.state.productList.slice(page > 1 ? (page-1) * 12 : page - 1, page * 12).map((value, index) => {
+        let { page } = this.state
+        return this.state.productList.slice(page > 1 ? (page - 1) * 12 : page - 1, page * 12).map((value, index) => {
             return <div className="col-3 mt-1">
                 <Card className="shadow p-2 mb-5 bg-white rounded">
+                    <Link to={`/product-detail?id=${value.id}`} style={{textDecoration: "none", color: "black", fontWeight: "bolder"}}>
+                        <CardImg top
+                            src={value.images[0]}
+                            top width="50%"
+                            alt={`${value.nama}-${index}`} />
 
-                    <CardImg top
-                        src={value.images[0]}
-                        top width="50%%"
-                        alt={`${value.nama}-${index}`} />
-
-                    <CardBody>
-                        <div style={{height: 48}}>
-                            <CardTitle tag="h5">{value.nama}</CardTitle>
-                        </div>
-                        <CardTitle tag="h6" style={{ color: "green", fontWeight: "bold" }}>IDR {value.harga.toLocaleString()}</CardTitle>
-                    </CardBody>
+                        <CardBody>
+                            <div style={{ height: 48 }}>
+                                <CardTitle tag="h5">{value.nama}</CardTitle>
+                            </div>
+                            <CardTitle tag="h6" style={{ color: "green", fontWeight: "bold" }}>IDR {value.harga.toLocaleString()}</CardTitle>
+                        </CardBody>
+                    </Link>
 
                 </Card>
             </div>
@@ -64,8 +65,8 @@ class ProductPage extends React.Component {
     btPagination = () => {
         let btn = []
         for (let i = 0; i < Math.ceil(this.state.productList.length / 12); i++) {
-            btn.push(<Button outline color="success" disabled={this.state.page == i + 1 ? true : false} 
-            onClick={() => this.setState({ page: i + 1})}>
+            btn.push(<Button outline color="success" disabled={this.state.page == i + 1 ? true : false}
+                onClick={() => this.setState({ page: i + 1 })}>
                 {i + 1}
             </Button>)
         }
@@ -103,13 +104,13 @@ class ProductPage extends React.Component {
 
     render() {
         return (
-            <div className="p-5">
-                <h1>Product Page</h1>
+            <div className="p-5 mt-5">
+                
                 <div className="row">
                     {this.printProduct()}
                 </div>
                 <div className="text-center">
-                    <ButtonGroup style={{height: 50, width: 50}}>
+                    <ButtonGroup>
                         {this.btPagination()}
                     </ButtonGroup>
                 </div>

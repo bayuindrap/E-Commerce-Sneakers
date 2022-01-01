@@ -9,6 +9,7 @@ import RegisPage from "./pages/RegisPage";
 import { connect } from "react-redux";
 import { loginAction } from "./redux/actions/userAction";
 import ProductPage from "./pages/ProductPage";
+import ProductDetail from "./pages/ProductDetail";
 
 
 class App extends React.Component {
@@ -52,6 +53,7 @@ class App extends React.Component {
           <Route path="/login-page/register-page" element={<RegisPage />} />
           <Route path="/register-page/login-page" element={<LoginPage />} />
           <Route path="/product-page" element={<ProductPage />} />
+          <Route path="/product-detail" element={<ProductDetail />} />
 
         </Routes>
 
