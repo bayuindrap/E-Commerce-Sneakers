@@ -38,13 +38,13 @@ export const loginAction = (username, password) => {
                     payload: res.data[0]
                 })
                 return { success: true }
-            } 
-        } catch (error){
+            }
+        } catch (error) {
             console.log(error)
         }
     }
 
-    
+
 }
 
 export const logoutAction = () => {
@@ -52,3 +52,26 @@ export const logoutAction = () => {
         type: "LOGOUT"
     }
 }
+
+
+export const updateCart = (data, iduser) => {
+    return async (dispatch) => {
+        try {
+
+            let res = await axios.patch(`${API_URL}/dataUser/${iduser}`, {
+                cart: data
+            })
+
+            dispatch({
+                type: "UPDATE_CART",
+                payload: res.data.cart
+            })
+            return { success: true }
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+}
+
+
