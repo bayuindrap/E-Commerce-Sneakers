@@ -4,13 +4,51 @@ import { connect } from "react-redux";
 import { Button, FormGroup, Input, Label, Row } from "reactstrap";
 import { API_URL } from "../helper";
 import { updateCart } from "../redux/actions/userAction";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 
 
 class CartPage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            ongkir: 0
+        }
+    }
+
+
+    total = () => {
+        let total = 0
+        this.props.cart.forEach((item) => {
+            total += item.totalHarga
+        })
+        return total + this.state.ongkir
+    }
+
+    btnRemove = (index) => {
+        let temp = [...this.props.cart];
+        temp.splice(index, 1)
+        this.props.updateCart(temp, this.props.iduser)
+
+    }
+
+
+    btnCheckout = () => {
+        const date = new Date()
+        axios.post(`${API_URL}/transactions`, {
+            iduser: this.props.iduser,
+            username: this.props.username,
+            invoice: `#SNKRS/${date.getTime()}`,
+            date: date.toLocaleDateString(),
+            totalharga: this.total() - parseInt(this.state.ongkir),
+            shipping: parseInt(this.state.ongkir),
+            subTotal: this.total(),
+            detail: [...this.props.cart],
+            status: "Waiting Confirmation"
+        }).then((res) => {
+            this.props.updateCart([], this.props.iduser)
+            this.setState({ ongkir: 0 })
+        })
     }
 
     printCart = () => {
@@ -33,25 +71,72 @@ class CartPage extends React.Component {
                     </div>
 
                     <div className="col  d-flex justify-content-center flex-column">
-                        <p style={{ fontWeight: 'bolder', color: "#159953" }}>IDR {value.harga.toLocaleString()}</p>
+                        <p style={{ fontWeight: 'bolder', color: "#159953", marginBottom: 3, marginTop: -15 }}>IDR {value.harga.toLocaleString()}  </p>
+
+                        <FaRegTrashAlt style={{ margin: "auto" }} onClick={() => this.btnRemove(index)} />
                     </div>
-                    {/* <div className='col-md-5 d-flex align-items-center'>
-                        <div className='d-flex justify-content between align-items-center'>
-                            <div className='d-flex' style={{ width: '50%' }}>
-                                <span style={{ width: '100%', display: 'flex', alignItems: 'center' }}>
-                                    <Button onClick={() => this.btnDesc(index)}>-</Button>
-                                    <Input placeholder="qty" value={item.qty} style={{ width: "50%", display: 'inline-block', textAlign: 'center' }} />
-                                    <Button onClick={() => this.btnInc(index)}>+</Button>
-                                </span>
-                            </div>
-                            <h4>Rp {(item.totalHarga).toLocaleString()}</h4>
-                        </div>
-                        <Button color="warning" style={{ border: 'none', float: 'right', marginLeft: "1vw" }} onClick={() => this.btnRemove(index)}>Remove</Button>
-                    </div> */}
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+
                 </div>
             )
         })
     }
+
+    printPayment = () => {
+        return this.props.cart.map((value, index) => {
+            return (
+                <div className="col-12 p-4">
+                    <div className=" row p-2 shadow bg-white rounded">
+                        <div style={{ paddingTop: -20 }}>
+                            <p style={{ color: "grey", fontWeight: "bold" }}>Payment Summary</p>
+                            <div className="row">
+                                <div className="row-2">
+                                    <p style={{ float: "left" }}>Product Price</p>
+                                    <p style={{ float: "right" }}> IDR {value.harga.toLocaleString()}</p>
+                                </div>
+                                
+                            </div>
+                            <div className="row">
+                                <div className="row-2">
+                                    <p style={{ float: "left" }}>Shipping Handling</p>
+                                    <Input style={{ width: 120, height: 25, float: "right" }} onChange={(e) => this.setState({ ongkir: parseInt(e.target.value) })}
+                                        type="number"></Input>
+                                </div>
+                               
+                                <div className="row-2 pt-4">
+                                    <p style={{ float: "left" }}>Total</p>
+                                    <p style={{ float: "right" }}>IDR {(this.total()).toLocaleString()}</p>
+                                </div>
+                                <Button style={{ width: "100px", margin: "auto", marginRight: 13, backgroundColor: "#159852" }}>Checkout</Button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            )
+        })
+
+    }
+
+
 
 
     render() {
@@ -62,19 +147,64 @@ class CartPage extends React.Component {
                     <div className="col-7 p-4">
                         {this.printCart()}
                     </div>
-                    <div className="col-5 p-4">
-                        <div className="p-2 shadow bg-white rounded">
-                            <div className="d-block">
-                                <img src="https://i.postimg.cc/Kjz627p3/loc.png" style={{ width: "20px", verticalAlign: "middle"}} />
-                            </div>
 
-                            <div style={{paddingTop: -20}}>
-                                <p style={{ color: "grey", fontWeight: "bold", marginLeft: 25 }}>Deliver to</p>
-                                <p style={{ marginLeft: 25, fontWeight: "bold" }}>Office - Purwadhika</p>
-                                <p style={{ marginLeft: 25 }}>Jl. BSD Green Office Park, GOP 9 - G Floor BSD City, Sampora, Kec. Cisauk, Kabupaten Tangerang, Banten 15345</p>
+                    <div className="col-5">
+
+                        <div className="col-12 p-4">
+                            <div className="p-2 shadow bg-white rounded">
+                                {/* <div>
+                                    <img src="https://i.postimg.cc/Kjz627p3/loc.png" style={{ width: "20px", verticalAlign: "middle" }} />
+                                </div> */}
+
+                                <div style={{ paddingTop: -20 }}>
+                                    <p style={{ color: "grey", fontWeight: "bold", marginLeft: 25 }}>Deliver to</p>
+                                    <p style={{ marginLeft: 25, fontWeight: "bold" }}>Office - Purwadhika</p>
+                                    <p style={{ marginLeft: 25 }}>JL. BSD Green Office Park, GOP 9 - G Floor BSD City, Sampora, Kec. Cisauk, Kabupaten Tangerang, Banten 15345</p>
+                                </div>
                             </div>
                         </div>
+
+                        <div className="col-12 p-4 py-0">
+                            <div className="p-2 shadow bg-white rounded">
+                                <p style={{ fontWeight: "bold", padding: 2 }}>Have a voucher code?</p>
+
+                                <div style={{ backgroundColor: "#D0EADC", color: "white", width: 540, height: "60px", borderRadius: 15, marginBottom: 10 }}>
+                                    <div >
+                                        <p style={{ textAlign: "left", marginLeft: 15, paddingTop: 15, color: "black" }}>Enter voucher code here</p>
+                                    </div>
+                                    <div style={{ backgroundColor: "#159852", color: "white", width: "80px", height: "35px", borderRadius: 15, float: "right", display: "inline-block", marginTop: -40, marginRight: 15 }}>
+
+                                        <p style={{ textAlign: "center" }}>View</p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        {/* <div className="col-12 p-4">
+                            <div className="p-2 shadow bg-white rounded">
+                                <div>
+                                    <img src="https://i.postimg.cc/Kjz627p3/loc.png" style={{ width: "20px", verticalAlign: "middle" }} />
+                                </div>
+
+                                <div style={{ paddingTop: -20 }}>
+                                    <p style={{ color: "grey", fontWeight: "bold", marginLeft: 25 }}>Deliver to</p>
+                                    <p style={{ marginLeft: 25, fontWeight: "bold" }}>Office - Purwadhika</p>
+                                    <p style={{ marginLeft: 25 }}>Jl. BSD Green Office Park, GOP 9 - G Floor BSD City, Sampora, Kec. Cisauk, Kabupaten Tangerang, Banten 15345</p>
+                                </div>
+                            </div>
+                        </div> */}
+
+                        <div>
+                            {this.printPayment()}
+                        </div>
+
+
                     </div>
+
+
+
                 </div>
             </div>
         );

@@ -13,6 +13,7 @@ import ProductDetail from "./pages/ProductDetail";
 import CartPage from "./pages/CartPage";
 
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -56,6 +57,7 @@ class App extends React.Component {
           <Route path="/product-page" element={<ProductPage />} />
           <Route path="/product-detail" element={<ProductDetail />} />
           <Route path="/cart-page" element={<CartPage />} />
+          
 
         </Routes>
 
