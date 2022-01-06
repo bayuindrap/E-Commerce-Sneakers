@@ -18,12 +18,12 @@
       "status": "active",
       "cart": [
         {
-          "images": "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzI0NzI1L2RhZWE1MTRlODFjMjFlMjkxNDg4OGEzOTgyMzdlZTM0LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTAwfSwid2VicCI6eyJxdWFsaXR5Ijo1MH19fQ==",
-          "nama": "Air Jordan 1 Low Fragment x Travis Scott",
+          "images": "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzgxOTgvNTM0MmEyMTctYzIwNS00N2UzLWE4YjEtNDkwMWJiNTM3YTk3LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTAwfSwid2VicCI6eyJxdWFsaXR5Ijo1MH19fQ==",
+          "nama": "SB Dunk Low Chunky Dunky",
           "brand": "Nike",
-          "harga": 19550000,
-          "totalHarga": 19550000,
-          "size": 45,
+          "harga": 15500000,
+          "totalHarga": 15500000,
+          "size": 42,
           "qty": 1
         }
       ]
@@ -1774,5 +1774,28 @@
       "id": 75
     }
   ],
-  "transactions": []
+  "transactions": [
+    {
+      "iduser": 2,
+      "username": "bayu",
+      "invoice": "#SNKRS/1641457838517",
+      "date": "1/6/2022",
+      "totalharga": 15500000,
+      "shipping": 200000,
+      "subTotal": 15700000,
+      "detail": [
+        {
+          "images": "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzgxOTgvNTM0MmEyMTctYzIwNS00N2UzLWE4YjEtNDkwMWJiNTM3YTk3LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTAwfSwid2VicCI6eyJxdWFsaXR5Ijo1MH19fQ==",
+          "nama": "SB Dunk Low Chunky Dunky",
+          "brand": "Nike",
+          "harga": 15500000,
+          "totalHarga": 15500000,
+          "size": 42,
+          "qty": 1
+        }
+      ],
+      "status": "Waiting Confirmation",
+      "id": 1
+    }
+  ]
 }

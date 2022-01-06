@@ -1,10 +1,13 @@
 import axios from "axios";
 import React from "react";
 import { connect } from "react-redux";
-import { Button, FormGroup, Input, Label, Row } from "reactstrap";
+import { Button, FormGroup, Input, Badge } from "reactstrap";
 import { API_URL } from "../helper";
 import { updateCart } from "../redux/actions/userAction";
-import { FaRegTrashAlt } from "react-icons/fa";
+import { FaRegTrashAlt, FaCartPlus } from "react-icons/fa";
+import { BsFillCartFill, BsCart3 } from "react-icons/bs";
+import { MdLocationOn } from "react-icons/md";
+import { Navigate } from "react-router-dom";
 
 
 
@@ -12,7 +15,8 @@ class CartPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            ongkir: 0
+            ongkir: 0,
+            redirect: false
         }
     }
 
@@ -46,8 +50,14 @@ class CartPage extends React.Component {
             detail: [...this.props.cart],
             status: "Waiting Confirmation"
         }).then((res) => {
-            this.props.updateCart([], this.props.iduser)
-            this.setState({ ongkir: 0 })
+            if (this.props.iduser) {
+                
+                this.props.updateCart([], this.props.iduser)
+                this.setState({ ongkir: 0 })
+                this.setState({redirect: true})
+                
+            }
+
         })
     }
 
@@ -74,6 +84,7 @@ class CartPage extends React.Component {
                         <p style={{ fontWeight: 'bolder', color: "#159953", marginBottom: 3, marginTop: -15 }}>IDR {value.harga.toLocaleString()}  </p>
 
                         <FaRegTrashAlt style={{ margin: "auto" }} onClick={() => this.btnRemove(index)} />
+                        
                     </div>
                     <br></br>
                     <br></br>
@@ -99,6 +110,40 @@ class CartPage extends React.Component {
         })
     }
 
+    printTransaction = () => {
+        return this.state.transaksi.map((value, index) => {
+
+            let badgeColor = value.status.includes("Cancel") ? "danger" : "warning"
+
+            return <div className="shadow pb-3 rounded">
+                <div className="shadow-sm p-2  rounded" style={{ color: "white", backgroundColor: "#159852" }}>
+                    <b style={{ marginLeft: 20 }}>{value.invoice}    </b>
+                    <span> | {value.date}  |  <Badge color={badgeColor}>{value.status}</Badge></span>
+                </div>
+                <div className="row p-3">
+                    <div className="col-md-1">
+                        <img src={value.detail[0].images} width="100%" alt="" />
+                        <h4 style={{ fontWeight: "bolder" }}>{value.detail[0].nama}</h4>
+                        <p className="text-muted">IDR {value.detail[0].harga.toLocaleString()}</p>
+                    </div>
+                    <div className="col-md-8 d-flex flex-column justify-content-center" style={{ borderRight: "1px solid gray" }}>
+                        {/* <h4 style={{ fontWeight: "bolder" }}>{value.detail[0].nama}</h4>
+                        <p className="text-muted">IDR {value.detail[0].harga.toLocaleString()}</p> */}
+                        
+                    </div>
+                    <div className="col-md-3">
+                        <p className="text-muted">Sub Total Includes Shipping</p>
+                        <h4 style={{ fontWeight: "bolder", color: "#159953" }}>IDR {value.subTotal.toLocaleString()}</h4>
+                    </div>
+                </div>
+                <div style={{ textAlign: "right" }}>
+                    <Button color="danger"  >Batalkan Pesanan</Button>
+                    <Button color="primary" outline style={{ border: "none" }}>Lihat Detail Produk</Button>
+                </div>
+            </div>
+        })
+    }
+
     printPayment = () => {
         return this.props.cart.map((value, index) => {
             return (
@@ -107,24 +152,24 @@ class CartPage extends React.Component {
                         <div style={{ paddingTop: -20 }}>
                             <p style={{ color: "grey", fontWeight: "bold" }}>Payment Summary</p>
                             <div className="row">
-                                <div className="row-2">
+                                <div className="row-2" style={{marginTop: -10}}>
                                     <p style={{ float: "left" }}>Product Price</p>
                                     <p style={{ float: "right" }}> IDR {value.harga.toLocaleString()}</p>
                                 </div>
                                 
                             </div>
                             <div className="row">
-                                <div className="row-2">
+                                <div className="row-2 " style={{marginTop: -10}}>
                                     <p style={{ float: "left" }}>Shipping Handling</p>
-                                    <Input style={{ width: 120, height: 25, float: "right" }} onChange={(e) => this.setState({ ongkir: parseInt(e.target.value) })}
+                                    <Input style={{ width: 106, height: 25, float: "right" }} onChange={(e) => this.setState({ ongkir: parseInt(e.target.value) })}
                                         type="number"></Input>
                                 </div>
                                
-                                <div className="row-2 pt-4">
+                                <div className="row-2 " style={{marginTop: -10}}>
                                     <p style={{ float: "left" }}>Total</p>
                                     <p style={{ float: "right" }}>IDR {(this.total()).toLocaleString()}</p>
                                 </div>
-                                <Button style={{ width: "100px", margin: "auto", marginRight: 13, backgroundColor: "#159852" }}>Checkout</Button>
+                                <Button style={{ width: "113px", margin: "auto", marginRight: 10, backgroundColor: "#159852", marginTop: -10 }} onClick={this.btnCheckout}> <BsFillCartFill/> Checkout </Button>
                             </div>
 
                         </div>
@@ -140,6 +185,9 @@ class CartPage extends React.Component {
 
 
     render() {
+        if(this.state.redirect){
+            return <Navigate to="/transaction-page"/>
+        }
         return (
             <div className="container-fluid">
                 <h1>Cart Page</h1>
@@ -155,11 +203,12 @@ class CartPage extends React.Component {
                                 {/* <div>
                                     <img src="https://i.postimg.cc/Kjz627p3/loc.png" style={{ width: "20px", verticalAlign: "middle" }} />
                                 </div> */}
+                                {/* <MdLocationOn style={{}}/> */}
 
                                 <div style={{ paddingTop: -20 }}>
                                     <p style={{ color: "grey", fontWeight: "bold", marginLeft: 25 }}>Deliver to</p>
-                                    <p style={{ marginLeft: 25, fontWeight: "bold" }}>Office - Purwadhika</p>
-                                    <p style={{ marginLeft: 25 }}>JL. BSD Green Office Park, GOP 9 - G Floor BSD City, Sampora, Kec. Cisauk, Kabupaten Tangerang, Banten 15345</p>
+                                    <p style={{ marginLeft: 25, fontWeight: "bold", marginTop: -10 }}>Office - Purwadhika</p>
+                                    <p style={{ marginLeft: 25, marginTop: -10 }}>JL. BSD Green Office Park, GOP 9 - G Floor BSD City, Sampora, Kec. Cisauk, Kabupaten Tangerang, Banten 15345</p>
                                 </div>
                             </div>
                         </div>
@@ -182,21 +231,7 @@ class CartPage extends React.Component {
 
                         </div>
 
-                        {/* <div className="col-12 p-4">
-                            <div className="p-2 shadow bg-white rounded">
-                                <div>
-                                    <img src="https://i.postimg.cc/Kjz627p3/loc.png" style={{ width: "20px", verticalAlign: "middle" }} />
-                                </div>
-
-                                <div style={{ paddingTop: -20 }}>
-                                    <p style={{ color: "grey", fontWeight: "bold", marginLeft: 25 }}>Deliver to</p>
-                                    <p style={{ marginLeft: 25, fontWeight: "bold" }}>Office - Purwadhika</p>
-                                    <p style={{ marginLeft: 25 }}>Jl. BSD Green Office Park, GOP 9 - G Floor BSD City, Sampora, Kec. Cisauk, Kabupaten Tangerang, Banten 15345</p>
-                                </div>
-                            </div>
-                        </div> */}
-
-                        <div>
+                        <div className="p-2">
                             {this.printPayment()}
                         </div>
 
