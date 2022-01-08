@@ -62,20 +62,58 @@ class NavbarComponent extends React.Component {
                             </Spinner>
                             :
 
-                            this.props.username
-                                ?
+                            this.props.username ?
                                 <UncontrolledDropdown style={{ marginLeft: "auto" }}>
-                                    <DropdownToggle caret nav size="sm" className="d-flex align-items-center" style={{ color: "green" }}>
+                                    <DropdownToggle caret nav size="sm" className="d-flex align-items-center" style={{ color: "#159953" }}>
                                         Hello, {this.props.username}
                                     </DropdownToggle>
-                                    <DropdownMenu>
-                                        <DropdownItem onClick={() => {
-                                            localStorage.removeItem("data");
-                                            this.props.logoutAction();
-                                        }}>
-                                            LOGOUT
-                                        </DropdownItem>
-                                    </DropdownMenu>
+                                    {
+                                        this.props.role == "user"
+                                            ?
+
+                                            <DropdownMenu right>
+                                                <Link to="/cart-page" style={{ color: "#159953", textDecoration: "none" }}>
+                                                    <DropdownItem style={{color: "#159953"}}>
+                                                        Cart 
+                                                    </DropdownItem>
+                                                </Link>
+                                                <Link to="transaction-page" style={{ color: "#159953", textDecoration: "none" }}>
+                                                    <DropdownItem style={{color: "#159953"}}>
+                                                        Transactions
+                                                    </DropdownItem>
+                                                </Link>
+                                                <DropdownItem divider/>
+                                                <DropdownItem onClick={() => {
+                                                    localStorage.removeItem("data");
+                                                    this.props.logoutAction();
+                                                }} style={{color: "red"}}>
+                                                    Logout
+                                                </DropdownItem>
+                                            </DropdownMenu>
+
+                                            :
+
+                                            <DropdownMenu right >
+                                                <Link to="/product-management" style={{ color: "#159953", textDecoration: "none" }} className="nav-link">
+                                                    <DropdownItem style={{color: "#159953"}}>
+                                                        Products Management
+                                                    </DropdownItem>
+                                                </Link>
+                                                <Link to="/transaction-admin" style={{ color: "#159953", textDecoration: "none" }} className="nav-link">
+                                                    <DropdownItem style={{color: "#159953"}}>
+                                                        Transactions Management
+                                                    </DropdownItem>
+                                                </Link>
+                                                <DropdownItem divider />
+                                                <DropdownItem onClick={() => {
+                                                    localStorage.removeItem("data");
+                                                    this.props.logoutAction();
+                                                }} style={{color: "red"}}>
+                                                    Logout
+                                                </DropdownItem>
+                                            </DropdownMenu>
+
+                                    }
 
                                 </UncontrolledDropdown>
                                 :

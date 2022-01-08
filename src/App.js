@@ -12,6 +12,7 @@ import ProductPage from "./pages/ProductPage";
 import ProductDetail from "./pages/ProductDetail";
 import CartPage from "./pages/CartPage";
 import Transaction from "./pages/TransactionPage";
+import TransactionAdmin from "./pages/TransactionAdmin";
 
 
 
@@ -59,6 +60,7 @@ class App extends React.Component {
           <Route path="/product-detail" element={<ProductDetail />} />
           <Route path="/cart-page" element={<CartPage />} />
           <Route path="/transaction-page" element={<Transaction />} />
+          <Route path="/transaction-admin" element={<TransactionAdmin />} />
           
 
         </Routes>

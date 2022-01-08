@@ -6,7 +6,6 @@
       "password": "admin",
       "role": "admin",
       "id": 1,
-      "status": "active",
       "cart": []
     },
     {
@@ -16,17 +15,7 @@
       "role": "user",
       "id": 2,
       "status": "active",
-      "cart": [
-        {
-          "images": "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzgxOTgvNTM0MmEyMTctYzIwNS00N2UzLWE4YjEtNDkwMWJiNTM3YTk3LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTAwfSwid2VicCI6eyJxdWFsaXR5Ijo1MH19fQ==",
-          "nama": "SB Dunk Low Chunky Dunky",
-          "brand": "Nike",
-          "harga": 15500000,
-          "totalHarga": 15500000,
-          "size": 42,
-          "qty": 1
-        }
-      ]
+      "cart": []
     },
     {
       "username": "testregis",
@@ -45,6 +34,15 @@
       "status": "active",
       "cart": [],
       "id": 4
+    },
+    {
+      "username": "boruto",
+      "email": "boruto@mail.com",
+      "password": "boruto",
+      "role": "user",
+      "status": "active",
+      "cart": [],
+      "id": 5
     }
   ],
   "products": [
@@ -663,9 +661,9 @@
         }
       ],
       "images": [
-        "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzI2NDkvMTI0ZTBkZDMtZjI3NS00YjNkLTlkZTUtNTAwZDAxNTkxYmJhLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjQwMH0sIndlYnAiOnsicXVhbGl0eSI6NTB9fX0=",
-        "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzI2NDkvNWFiOGIzNGYtOTI5OC00MTMxLWE0ZTktMzQ4Mjc2OWM2ZjA0LmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH0sIndlYnAiOnsicXVhbGl0eSI6NTB9fX0=",
-        "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzI2NDkvM2UyMzU5NzQtNzY4OS00YmYxLTkxYzItN2NjNzU0NzUwZmMwLmpwZWciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjUwMH0sIndlYnAiOnsicXVhbGl0eSI6NTB9fX0="
+        "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzI2NDgvZTY4NDQ3OWZlN2EwYTM1ZDIwMjU2YzZlZTI4OGUyNzIucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDB9LCJ3ZWJwIjp7InF1YWxpdHkiOjUwfX19",
+        "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzI2NDgvZTFhOGUwZmY5YjE0NTdkNzIxZTViMGY2MTJhYjE1M2IucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1MDB9LCJ3ZWJwIjp7InF1YWxpdHkiOjUwfX19",
+        "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzI2NDgvODRmYjczZjVhZGExZjkxNGYxZDk2YTFhYzZmMTQyOGMucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1MDB9LCJ3ZWJwIjp7InF1YWxpdHkiOjUwfX19"
       ],
       "id": 27
     },
@@ -1782,7 +1780,7 @@
       "date": "1/6/2022",
       "totalharga": 15500000,
       "shipping": 200000,
-      "subTotal": 15700000,
+      "subTotal": 0,
       "detail": [
         {
           "images": "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzgxOTgvNTM0MmEyMTctYzIwNS00N2UzLWE4YjEtNDkwMWJiNTM3YTk3LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTAwfSwid2VicCI6eyJxdWFsaXR5Ijo1MH19fQ==",
@@ -1794,8 +1792,74 @@
           "qty": 1
         }
       ],
-      "status": "Waiting Confirmation",
+      "status": "Order Declined",
       "id": 1
+    },
+    {
+      "iduser": 2,
+      "username": "bayu",
+      "invoice": "#SNKRS/1641632920512",
+      "date": "1/8/2022",
+      "totalharga": 93880000,
+      "shipping": 150000,
+      "subTotal": 94030000,
+      "detail": [
+        {
+          "images": "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzk0OTEvNTM5MDhkZjY1OGJiMDYzNGFiYjkwNzNjOWYzMjk1MTQucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDB9LCJ3ZWJwIjp7InF1YWxpdHkiOjUwfX19",
+          "nama": "Air Jordan 1 Low Dior",
+          "brand": "Nike",
+          "harga": 93880000,
+          "totalHarga": 93880000,
+          "size": 42,
+          "qty": 1
+        }
+      ],
+      "status": "Order Accepted",
+      "id": 2
+    },
+    {
+      "iduser": 4,
+      "username": "naruto",
+      "invoice": "#SNKRS/1641639149941",
+      "date": "1/8/2022",
+      "totalharga": 93880000,
+      "shipping": 50000,
+      "subTotal": 93930000,
+      "detail": [
+        {
+          "images": "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzk0OTEvNTM5MDhkZjY1OGJiMDYzNGFiYjkwNzNjOWYzMjk1MTQucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo0MDB9LCJ3ZWJwIjp7InF1YWxpdHkiOjUwfX19",
+          "nama": "Air Jordan 1 Low Dior",
+          "brand": "Nike",
+          "harga": 93880000,
+          "totalHarga": 93880000,
+          "size": 45,
+          "qty": 1
+        }
+      ],
+      "status": "Waiting Confirmation",
+      "id": 3
+    },
+    {
+      "iduser": 5,
+      "username": "boruto",
+      "invoice": "#SNKRS/1641640238000",
+      "date": "1/8/2022",
+      "totalharga": 5500000,
+      "shipping": 48000,
+      "subTotal": 5548000,
+      "detail": [
+        {
+          "images": "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzI4MDQ2LzJhYmFlYzlmNjBlOGY3MWE4MDhiYTY1NjRjMDU4YmJjLnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTAwfSwid2VicCI6eyJxdWFsaXR5Ijo1MH19fQ==",
+          "nama": "Yeezy 350 Beluga",
+          "brand": "Adidas",
+          "harga": 5500000,
+          "totalHarga": 5500000,
+          "size": 40,
+          "qty": 1
+        }
+      ],
+      "status": "Waiting Confirmation",
+      "id": 4
     }
   ]
 }

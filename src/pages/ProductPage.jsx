@@ -73,34 +73,7 @@ class ProductPage extends React.Component {
         return btn
     }
 
-    // printProduct = () => {
-    //     return this.props.productList.map((value, index) => {
-    //         return <div className="col-3 mt-2">
-    //             <Card className="shadow p-5 mb-5 bg-white rounded">
-    //                 <Link to={`/products-detail?id=${value.id}`} style={{ textDecoration: "none" }}>
-    //                     <CardImg top
-    //                         src={value.images[0]}
-    //                         top width="100%"
-    //                         alt={`${value.nama}-${index}`}
-    //                     />
-    //                     <CardBody>
-    //                         <CardTitle tag="h5" style={{ fontWeight: "bolder" }}>{value.nama}</CardTitle>
-    //                         <CardTitle tag="h6" style={{ fontWeight: "bold" }}>Rp.{value.harga.toLocaleString()}</CardTitle>
-    //                     </CardBody>
-    //                 </Link>
-    //             </Card>
-    //         </div>
-    //     })
-    // }
-
-
-
-
-
-
-
-
-
+   
 
     render() {
         return (

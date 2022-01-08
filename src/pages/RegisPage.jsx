@@ -40,7 +40,7 @@ class RegisPage extends React.Component {
                 status: "active",
                 cart: []
             }).then((res) => {
-                alert(`${this.usernameRegis.value} ,Registrasi Berhasil✔`)
+                alert(`${this.usernameRegis.value}, Registrasi Berhasil✔`)
                 // <div>
                 //     <Alert color="primary">
                 //         This is a primary alert with{' '}
