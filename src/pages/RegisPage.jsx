@@ -30,7 +30,7 @@ class RegisPage extends React.Component {
 
     btRegis = () => {
         if (this.usernameRegis.value == "" || this.emailRegis.value == "" || this.passwordRegis.value == "") {
-            alert("LENGKAPI SEMUA DATA❗")
+            alert("Fill all data first❗")
         } else {
             axios.post(`${API_URL}/dataUser`, {
                 username: this.usernameRegis.value,
@@ -40,7 +40,7 @@ class RegisPage extends React.Component {
                 status: "active",
                 cart: []
             }).then((res) => {
-                alert(`${this.usernameRegis.value}, Registrasi Berhasil✔`)
+                alert(`${this.usernameRegis.value}, Registration Complete✔`)
                 // <div>
                 //     <Alert color="primary">
                 //         This is a primary alert with{' '}

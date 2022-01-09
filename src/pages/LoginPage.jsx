@@ -57,7 +57,12 @@ class LoginPage extends React.Component {
     }
 
     btLogin = () => {
-        this.props.loginAction(this.usernameLogin.value, this.passwordLogin.value)
+        if (this.usernameLogin.value == "" || this.passwordLogin.value == "") {
+            alert(`Input your Username & Password❗`)
+        } else {
+
+            this.props.loginAction(this.usernameLogin.value, this.passwordLogin.value)
+        }
     }
 
 

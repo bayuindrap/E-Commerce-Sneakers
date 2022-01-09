@@ -13,6 +13,8 @@ import ProductDetail from "./pages/ProductDetail";
 import CartPage from "./pages/CartPage";
 import Transaction from "./pages/TransactionPage";
 import TransactionAdmin from "./pages/TransactionAdmin";
+import { productAction } from "./redux/actions/productAction";
+
 
 
 
@@ -26,6 +28,8 @@ class App extends React.Component {
 
   componentDidMount() {
     this.keeplogin()
+    // this.props.productAction()
+    this.props.productAction()
   }
 
   keeplogin = async () => {
@@ -45,6 +49,9 @@ class App extends React.Component {
       console.log(error)
     }
   }
+
+  // getProduct = () => {
+  // }
 
   render() {
     return (
@@ -76,4 +83,4 @@ const mapToProps = (state) => {
 }
 
 
-export default connect(mapToProps, { loginAction })(App);
+export default connect(mapToProps, { loginAction, productAction })(App);

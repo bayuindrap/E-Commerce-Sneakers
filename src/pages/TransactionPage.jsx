@@ -49,7 +49,7 @@ class Transaction extends React.Component {
 
             let badgeColor = value.status.includes("Canceled") ? "danger" : "warning"
 
-            return <div className="shadow pb-3 rounded">
+            return <div className="shadow pb-3 rounded mb-5">
                 <div className="shadow-sm p-2  rounded" style={{ color: "white", backgroundColor: "#159852" }}>
                     <b style={{ marginLeft: 20 }}>{value.invoice}    </b>
                     <span> | {value.date}  |  <Badge color={badgeColor}>{value.status}</Badge></span>
@@ -87,7 +87,7 @@ class Transaction extends React.Component {
 
     render() {
         return (
-            <div className="container p-5 mt-5">
+            <div className="container p-5 mt-5" style={{marginBottom: 20}}>
                 <h1 className='text-center'> ✔Transaction ✔</h1>
                 {this.printTransaction()}
             </div>
