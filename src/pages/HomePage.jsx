@@ -81,8 +81,7 @@ class HomePage extends React.Component {
                         />
 
                         <Carousel.Caption>
-                            {/* <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
+                           
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -94,8 +93,7 @@ class HomePage extends React.Component {
                         />
 
                         <Carousel.Caption>
-                            {/* <h3>Third slide label</h3>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p> */}
+                           
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -141,14 +139,14 @@ class HomePage extends React.Component {
 
                 <div className='shadow p-5' style={{ backgroundColor: "#159953", width: "95vw", paddingTop: "80px", margin: "auto", marginTop: "5vh" }}>
 
-                    <div style={{ marginBottom: 20, marginLeft: 28 }}>
+                    <div style={{ marginBottom: 20, marginLeft: 35 }}>
                         <div style={{ backgroundColor: "red", color: "white", width: 150, height: "40px", borderRadius: 15 }}>
                             <img src="https://i.postimg.cc/qRRq5c7F/hot-product-white-05e517c3.png" style={{ width: "15px", marginLeft: 12, marginTop: 8 }} />
                             <p style={{ fontWeight: "bold", textAlign: "center", marginTop: -22, marginLeft: 20, fontSize: 17 }}>Hot Products</p>
                         </div>
                     </div>
 
-                    <div className='row' style={{ marginLeft: 15, marginTop: 35 }}>
+                    <div className='row' style={{ marginLeft: 20, marginTop: 35 }}>
                         {this.printProduct()}
                     </div>
                 </div>

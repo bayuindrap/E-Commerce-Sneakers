@@ -14,6 +14,7 @@ import CartPage from "./pages/CartPage";
 import Transaction from "./pages/TransactionPage";
 import TransactionAdmin from "./pages/TransactionAdmin";
 import { productAction } from "./redux/actions/productAction";
+import FooterComponent from "./components/FooterComp";
 
 
 
@@ -22,7 +23,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true
+      loading: true,
+      path: "/"
     }
   }
 
@@ -56,7 +58,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <NavbarComponent loading={this.state.loading} />
+        <NavbarComponent loading={this.state.loading} path={this.state.path} />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login-page" element={<LoginPage />} />
@@ -71,7 +73,7 @@ class App extends React.Component {
           
 
         </Routes>
-
+      <FooterComponent/>
       </div>
     );
   }

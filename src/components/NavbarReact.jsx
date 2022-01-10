@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { Button, Nav, Navbar, NavbarBrand, NavbarToggler, Collapse, NavItem, NavLink, UncontrolledDropdown, DropdownMenu, DropdownItem, NavbarText, DropdownToggle, Spinner } from "reactstrap";
 import { logoutAction } from "../redux/actions/userAction";
 import { connect } from "react-redux";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { FaMoneyBillAlt } from "react-icons/fa";
+import { FiLogOut } from "react-icons/fi";
 
 
 class NavbarComponent extends React.Component {
@@ -51,7 +54,7 @@ class NavbarComponent extends React.Component {
                         </NavItem>
                         <NavItem>
                             <NavLink style={{ color: "White" }}>
-                                Made In Indonesia
+                                Made<a style={{color: "red"}}>In</a>donesia
                             </NavLink>
                         </NavItem>
                     </Nav>
@@ -74,12 +77,12 @@ class NavbarComponent extends React.Component {
                                             <DropdownMenu right>
                                                 <Link to="/cart-page" style={{ color: "#159953", textDecoration: "none" }}>
                                                     <DropdownItem style={{color: "#159953"}}>
-                                                        Cart 
+                                                       Cart  <AiOutlineShoppingCart/> 
                                                     </DropdownItem>
                                                 </Link>
                                                 <Link to="transaction-page" style={{ color: "#159953", textDecoration: "none" }}>
                                                     <DropdownItem style={{color: "#159953"}}>
-                                                        Transactions
+                                                        Transactions <FaMoneyBillAlt/>
                                                     </DropdownItem>
                                                 </Link>
                                                 <DropdownItem divider/>
@@ -87,7 +90,7 @@ class NavbarComponent extends React.Component {
                                                     localStorage.removeItem("data");
                                                     this.props.logoutAction();
                                                 }} style={{color: "red"}}>
-                                                    Logout
+                                                    <FiLogOut/> Logout 
                                                 </DropdownItem>
                                             </DropdownMenu>
 

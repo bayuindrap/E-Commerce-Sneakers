@@ -53,6 +53,15 @@
       "status": "active",
       "cart": [],
       "id": 5
+    },
+    {
+      "username": "kakashi",
+      "email": "kakashi@mail.com",
+      "password": "kakashi",
+      "role": "user",
+      "status": "active",
+      "cart": [],
+      "id": 6
     }
   ],
   "products": [
@@ -1912,8 +1921,52 @@
           "qty": 1
         }
       ],
-      "status": "Waiting Confirmation",
+      "status": "Order Accepted",
       "id": 6
+    },
+    {
+      "iduser": 6,
+      "username": "kakashi",
+      "invoice": "#SNKRS/1641781289848",
+      "date": "1/10/2022",
+      "totalharga": 22000000,
+      "shipping": 100000,
+      "subTotal": 0,
+      "detail": [
+        {
+          "images": "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzQwNzYvZjlhZTJjY2ZkOTBhNzUwMjgyODE2N2NlNWFlYmNhY2QucG5nIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo1MDB9LCJ3ZWJwIjp7InF1YWxpdHkiOjUwfX19",
+          "nama": "Air Jordan 1 Low Travis Scott",
+          "brand": "Nike",
+          "harga": 22000000,
+          "totalHarga": 22000000,
+          "size": 45,
+          "qty": 1
+        }
+      ],
+      "status": "Order Declined",
+      "id": 7
+    },
+    {
+      "iduser": 6,
+      "username": "kakashi",
+      "invoice": "#SNKRS/1641781303647",
+      "date": "1/10/2022",
+      "totalharga": 19550000,
+      "shipping": 50000,
+      "subTotal": 0,
+      "detail": [
+        {
+          "images": "https://d5ibtax54de3q.cloudfront.net/eyJidWNrZXQiOiJraWNrYXZlbnVlLWFzc2V0cyIsImtleSI6InByb2R1Y3RzLzI0NzI1L2RhZWE1MTRlODFjMjFlMjkxNDg4OGEzOTgyMzdlZTM0LnBuZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6NTAwfSwid2VicCI6eyJxdWFsaXR5Ijo1MH19fQ==",
+          "nama": "Air Jordan 1 Low Fragment x Travis Scott",
+          "brand": "Nike",
+          "harga": 19550000,
+          "totalHarga": 19550000,
+          "size": 45,
+          "qty": 1
+        }
+      ],
+      "status": "Order Canceled",
+      "id": 8
     }
   ],
   "articles": []
