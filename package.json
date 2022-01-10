@@ -2,7 +2,7 @@
   "name": "ecommerce_sneakers",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bayuindrap.github.io/E-Commerce-Sneakers",
+  "homepage": "http://bayuindrap.github.io/E-Commerce-Sneakers",
   "dependencies": {
     "-": "0.0.1",
     "@testing-library/jest-dom": "^5.16.1",
