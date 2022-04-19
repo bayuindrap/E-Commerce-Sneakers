@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 import { connect } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { Button, Collapse } from "reactstrap";
+import { Button, Collapse, Toast, ToastBody, ToastHeader } from "reactstrap";
 import { API_URL } from "../helper";
 import { updateCart } from "../redux/actions/userAction";
 
@@ -16,7 +16,11 @@ class ProductDetail extends React.Component {
             counter: 0,
             selectedSize: {},
             openSize: false,
-            redirect: false
+            redirect: false,
+            toastOpen: false,
+            toastHeader: "",
+            toastMessage: "",
+            toastIcon: "",
         }
     }
 
@@ -42,7 +46,7 @@ class ProductDetail extends React.Component {
 
 
     btnOrder = async () => {
-        let {selectedSize, detail, counter} = this.state
+        let { selectedSize, detail, counter } = this.state
         if (selectedSize.size) {
             let dataOrder = {
                 images: detail.images[0],
@@ -58,23 +62,48 @@ class ProductDetail extends React.Component {
             if (this.props.iduser) {
                 let res = await this.props.updateCart(temp, this.props.iduser)
                 if (res.success) {
-                    this.setState({redirect: true})
+                    this.setState({ redirect: true })
                 }
             } else {
-                alert(`Please Login first.`)
+                // alert(`Please Login first.`)
+                this.setState({
+                    toastOpen: true,
+                    toastHeader: "Add to Cart Warning",
+                    toastIcon: "warning",
+                    toastMessage: "Please Login First❗",
+                })
+
             }
 
         } else {
-            alert(`Please choose Size first❗`)
+            // alert(`Please choose Size first❗`)
+            this.setState({
+                toastOpen: true,
+                toastHeader: "Add to Cart Warning",
+                toastIcon: "warning",
+                toastMessage: "Please Choose Your Size❗",
+            })
         }
     }
 
     render() {
-        if(this.state.redirect){
-            return <Navigate to="/cart-page"/>
+        if (this.state.redirect) {
+            return <Navigate to="/cart-page" />
         }
         return (
             <div className="pt-5">
+
+                <div className="bg-warning">
+                    <Toast isOpen={this.state.toastOpen} style={{ position: "fixed", right: 5, top: 145, backgroundColor: "#f1c40f" }}>
+                        <ToastHeader icon={this.state.toastIcon} toggle={() => this.setState({ toastOpen: false })}>
+                            {this.state.toastHeader}
+                        </ToastHeader>
+                        <ToastBody>
+                            {this.state.toastMessage}
+                        </ToastBody>
+                    </Toast>
+                </div>
+
                 <div className="pt-5" style={{ color: "grey" }}>
                     <p style={{ marginLeft: "7.5vw" }}>Sneakers / {this.state.detail.brand} / {this.state.detail.nama}</p>
                 </div>
@@ -128,7 +157,7 @@ class ProductDetail extends React.Component {
                                 <div className="d-flex" style={{ justifyContent: "space-evenly", marginLeft: -27, paddingTop: 10 }}>
                                     <Button style={{ backgroundColor: "black", width: 170, fontWeight: "bold" }}>Brand New</Button>
                                     <Button style={{ backgroundColor: "black", width: 170, fontWeight: "bold" }}>Pre-order</Button>
-                                    <Button style={{ width: 170, backgroundColor: "#159953", border: "none", color: "white" , fontWeight: "bold"}} onClick={this.btnOrder}>Order Now</Button>
+                                    <Button style={{ width: 170, backgroundColor: "#159953", border: "none", color: "white", fontWeight: "bold" }} onClick={this.btnOrder}>Order Now</Button>
                                 </div>
 
                                 <div className="pt-5">
@@ -173,4 +202,4 @@ const mapToProps = (state) => {
     }
 }
 
-export default connect (mapToProps, {updateCart}) (ProductDetail);
+export default connect(mapToProps, { updateCart })(ProductDetail);

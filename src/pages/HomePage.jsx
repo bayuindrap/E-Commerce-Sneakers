@@ -6,6 +6,7 @@ import axios from "axios";
 import { Button, ButtonGroup, Card, CardBody, CardImg, CardTitle } from "reactstrap";
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import './product.css'
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -34,14 +35,14 @@ class HomePage extends React.Component {
     printProduct = () => {
 
         return this.state.productList.slice(4, 8).map((value, index) => {
-            return <div className="col-3 mt-1">
-                <Card className="shadow p-2 mb-5 bg-white rounded" style={{ width: "18vw" }}>
+            return <div className="col-3 mt-1 hvr-grow" style={{ borderRadius: 100 }}>
+                <Card className="shadow p-2 mb-5 bg-white" style={{ width: "19vw", borderRadius: 15, height: "48vh" }}>
                     <Link to={`/product-detail?id=${value.id}`} style={{ textDecoration: "none", color: "black", fontWeight: "bolder" }}>
-                        <img src='https://i.postimg.cc/J4ccTJkF/index1.png' style={{width: "28px", float:"right"}}/>
-                        <CardImg top
+                        <img src='https://i.postimg.cc/J4ccTJkF/index1.png' style={{ width: "28px", float: "right", marginRight: 8, marginTop: 5 }}/>
+                        <CardImg 
                             src={value.images[0]}
                             top width="10px"
-                            alt={`${value.nama}-${index}`} />
+                            alt={`${value.nama}-${index}`}/>
 
                         <CardBody>
                             <div style={{ height: 48, }}>

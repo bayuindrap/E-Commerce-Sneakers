@@ -45,14 +45,14 @@ class ProductPage extends React.Component {
 
     printProduct = () => {
         let { page } = this.state
-        return this.props.productList.slice(page > 1 ? (page - 1) * 9 : page - 1, page * 9).map((value, index) => {
-            return <div className="col-4 mt-1">
-                <Card className="shadow p-2 mb-3 bg-white rounded" style={{ width: "24vw" }}>
+        return this.props.productList.slice(page > 1 ? (page - 1) * 12 : page - 1, page * 12).map((value, index) => {
+            return <div className="col-3 mt-1 hvr-grow">
+                <Card className="shadow p-2 mb-3 bg-white" style={{ width: "18vw", borderRadius: 15, height: "41.5vh" }}>
                     <Link to={`/product-detail?id=${value.id}`} style={{ textDecoration: "none", color: "black", fontWeight: "bolder" }}>
-                        <CardImg top
+                        <CardImg
                             src={value.images[0]}
                             top width="30%"
-                            alt={`${value.nama}-${index}`} />
+                            alt={`${value.nama}-${index}`} style={{ objectFit: "contain" }} />
 
                         <CardBody>
                             <div style={{ height: 48 }}>
@@ -69,7 +69,7 @@ class ProductPage extends React.Component {
 
     btPagination = () => {
         let btn = []
-        for (let i = 0; i < Math.ceil(this.state.productList.length / 9); i++) {
+        for (let i = 0; i < Math.ceil(this.state.productList.length / 12); i++) {
             btn.push(<Button outline color="success" disabled={this.state.page == i + 1 ? true : false}
                 onClick={() => this.setState({ page: i + 1 })}>
                 {i + 1}
@@ -79,12 +79,9 @@ class ProductPage extends React.Component {
     }
 
     printFilter = () => {
-        return <div className=" shadow col-md-10 p-4" style={{ backgroundColor: "white", height: "83vh" }}>
+        return <div className=" shadow col-md-10 p-4" style={{ backgroundColor: "white", height: "60vh" }}>
             <div className="col">
 
-                {/* <Row>
-                    <Button type="button" color="success" onClick={() => this.setState({ modalOpen: !this.state.modalOpen })}>Add</Button>
-                </Row> */}
                 <FormGroup>
                     <Label style={{ fontWeight: "bold" }}>Product Name</Label>
                     <Input type="text" id="text" placeholder="Find product"
@@ -105,21 +102,19 @@ class ProductPage extends React.Component {
                         <Input type="select" style={{ width: "250px" }}
                             onChange={this.btnClick}>
                             {/* innerRef={(element) => this.inSearchSort = element} */}
-                            <option value="harga-asc">Price Asc</option>
-                            <option value="harga-desc">Price Desc</option>
+                            <option value="harga-asc">Price Up</option>
+                            <option value="harga-desc">Price Down</option>
                             <option value="nama-asc">A-Z</option>
                             <option value="nama-desc">Z-A</option>
                             <option value="id-asc">Reset</option>
                         </Input>
                     </InputGroup>
                     <div className="pt-2" style={{ textAlign: "end" }}>
-
-
-                        <Button style={{ backgroundColor: "#159953", color: "white", width: 90, float: "left" }} onClick={this.btnReset}> <BiReset style={{ color: "white" }} /> Reset</Button>
-                        <Button style={{ marginLeft: 16, backgroundColor: "#159953", width: 93 }} onClick={this.btnSearch}> <BsSearch /> Search</Button>
+                        <Button style={{ backgroundColor: "#159953", color: "white", width: 115, float: "left", borderRadius: 50 }} onClick={this.btnReset}>Clear Filter</Button>
+                        <Button style={{ marginLeft: 16, backgroundColor: "#159953", width: 115, borderRadius: 50 }} onClick={this.btnSearch}>Apply Filter</Button>
                     </div>
                     <div>
-                        <img src="https://i.postimg.cc/y8pDD0qh/app-icon.png" style={{width: "100%", marginTop: 70}}/>
+                        <img src="https://i.postimg.cc/y8pDD0qh/app-icon.png" style={{ width: "60%", marginTop: 20, marginLeft: 60 }} />
                     </div>
                 </FormGroup>
             </div>
@@ -154,11 +149,11 @@ class ProductPage extends React.Component {
         return (
             <div className="p-5 mt-5">
 
-               
+
                 <div className="row">
                     <div style={{ position: "fixed", display: "flex" }} className="row col-3">
                         {this.printFilter()}
-                       
+
 
                     </div>
                     <div className="row col-10" style={{ marginLeft: "18.5vw" }}>
@@ -167,7 +162,7 @@ class ProductPage extends React.Component {
                     </div>
                 </div>
 
-                <div  style={{marginLeft: "46vw"}}>
+                <div style={{ marginLeft: "46vw" }}>
                     <ButtonGroup>
                         {this.btPagination()}
                     </ButtonGroup>
@@ -177,11 +172,11 @@ class ProductPage extends React.Component {
     }
 }
 
-const mapToProps = ({productReducer}) => {
-    
+const mapToProps = ({ productReducer }) => {
+
     return {
         productList: productReducer.productList
-        
+
     }
 }
 

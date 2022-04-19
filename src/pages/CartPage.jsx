@@ -160,7 +160,7 @@ class CartPage extends React.Component {
                             </div>
                             <div className="row">
                                 <div className="row-2 " style={{marginTop: -10}}>
-                                    <p style={{ float: "left" }}>Shipping Handling</p>
+                                    <p style={{ float: "left" }}>Shipping & Handling</p>
                                     <Input style={{ width: 106, height: 25, float: "right" }} onChange={(e) => this.setState({ ongkir: parseInt(e.target.value) })}
                                         type="number"></Input>
                                 </div>
@@ -223,7 +223,7 @@ class CartPage extends React.Component {
                                     </div>
                                     <div style={{ backgroundColor: "#159852", color: "white", width: "80px", height: "35px", borderRadius: 15, float: "right", display: "inline-block", marginTop: -40, marginRight: 15 }}>
 
-                                        <p style={{ textAlign: "center" }}>View</p>
+                                        <p style={{ textAlign: "center", marginTop: 4 }}>View</p>
 
                                     </div>
                                 </div>
