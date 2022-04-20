@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import axios from "axios";
 import { Navigate } from 'react-router-dom';
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import Swal from 'sweetalert2'
 
 
 
@@ -81,7 +82,12 @@ class LoginPage extends React.Component {
     render() {
         
         if (this.props.iduser) {
-            alert(`Welcome ${this.props.username} 👌`)
+            // alert(`Welcome ${this.props.username} 👌`)
+            Swal.fire(
+                'Login Success',
+                `Welcome ${this.props.username}`,
+                'success'
+              )
             return <Navigate to="/"/>
         }
         return (
