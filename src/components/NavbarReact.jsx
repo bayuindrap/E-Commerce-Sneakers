@@ -15,19 +15,7 @@ class NavbarComponent extends React.Component {
     }
     render() {
         return (
-            // <Navbar expand="md" color="light">
-            //     <NavbarBrand>
-            //         <Link to="/">
-            //             <img src="https://e7.pngegg.com/pngimages/750/189/png-clipart-white-and-red-air-jordan-1-shoe-illustration-jumpman-air-jordan-drawing-shoe-sneakers-running-shoes-white-outdoor-shoe.png" alt="logo-brand" width="50px" />
-            //         </Link>
-            //     </NavbarBrand>
-            //     <Nav>
-            //         <NavItem color="#1B613B">
-            //             Sneakers
-            //         </NavItem>
-            //     </Nav>
-            // </Navbar>
-            //className="shadow bg-white rounded"
+          
             <Navbar expand="md" color="dark" fixed="top">
                 <NavbarBrand>
                     <Link to="/">

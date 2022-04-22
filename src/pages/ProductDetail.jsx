@@ -39,7 +39,8 @@ class ProductDetail extends React.Component {
         let { images } = this.state.detail
         return images.map((value, index) => {
             return (
-                <img className="select-image" src={value} key={index} width="100%" onClick={() => this.setState({ thumbnail: index })} />
+                <img className="select-image" src={value} key={index} width="100%" onClick={() => this.setState({ thumbnail: index })}
+                    style={{ borderBottom: this.state.thumbnail == index && "3px solid #159953 " }} />
             )
         })
     }
@@ -113,8 +114,15 @@ class ProductDetail extends React.Component {
                         this.state.detail.id &&
                         <>
 
-                            <div className="col-md-6">
-                                <img src={this.state.detail.images[this.state.thumbnail]} width="550px" />
+                           <div className="col-md-6">
+                                <div className="col-md-6">
+                                    <div className="img-magnifier-container">
+                                        <img src={this.state.detail.images[this.state.thumbnail]} width="550px" style={{ borderBottom: "1.5px solid gray" }} />
+                                    </div>
+                                    <div className="d-flex">
+                                        {this.renderImages()}
+                                    </div>
+                                </div>
                             </div>
                             <div className="col-md-6">
                                 <div style={{ marginBottom: 20 }}>

@@ -52,9 +52,10 @@ class FooterComponent extends React.Component {
                     </div>
 
                 </div>
-                {/* <div className="col-12 d-flex-end" style={{backgroundColor: "#000000"}}>
-                    <p style={{color: "white", margin: "auto"}}>Registered under PT. Karunia Internasional Citra Kencana</p>
-                </div> */}
+                <div className="text-center ">
+                    <p style={{color: "white", margin: "auto", fontSize: "12px"}}>Not for Commercial use.</p>
+                    <p style={{color: "white", margin: "auto", fontSize: "12px", marginBottom: 10}}>© 2022 | Bayu Indra Putra</p>
+                </div>
             </div>
         );
     }
