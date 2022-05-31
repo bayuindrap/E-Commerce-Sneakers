@@ -66,12 +66,17 @@ class LoginPage extends React.Component {
     btLogin = () => {
         if (this.usernameLogin.value == "" || this.passwordLogin.value == "") {
             // alert(`Input your Username & Password❗`)
-            this.setState({
-                toastOpen: true,
-                toastHeader: "Login Warning",
-                toastIcon: "warning",
-                toastMessage: "Input Username & Password Correctly❗",
-            })
+            // this.setState({
+            //     toastOpen: true,
+            //     toastHeader: "Login Warning",
+            //     toastIcon: "warning",
+            //     toastMessage: "Input Username & Password Correctly❗",
+            // })
+            Swal.fire(
+                'Login Failed',
+                `Input Username & Password Correctly`,
+                'error'
+              )
         } else {
 
             this.props.loginAction(this.usernameLogin.value, this.passwordLogin.value)

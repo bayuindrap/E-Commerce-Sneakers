@@ -4,6 +4,7 @@ import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 import { API_URL } from "../helper";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import Swal from "sweetalert2";
 
 
 class RegisPage extends React.Component {
@@ -38,12 +39,17 @@ class RegisPage extends React.Component {
     btRegis = () => {
         if (this.usernameRegis.value == "" || this.emailRegis.value == "" || this.passwordRegis.value == "") {
             // alert("Fill all data first❗")
-            this.setState({
-                toastOpen: true,
-                toastHeader: "Register Warning",
-                toastIcon: "warning",
-                toastMessage: "Fill all data first❗",
-            })
+            // this.setState({
+            //     toastOpen: true,
+            //     toastHeader: "Register Warning",
+            //     toastIcon: "warning",
+            //     toastMessage: "Fill all data first❗",
+            // })
+            Swal.fire(
+                'Register Warning',
+                `Username, Email or Password Can't be empty`,
+                'warning'
+              )
         } else {
             axios.post(`${API_URL}/dataUser`, {
                 username: this.usernameRegis.value,

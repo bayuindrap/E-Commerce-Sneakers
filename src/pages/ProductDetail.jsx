@@ -5,6 +5,7 @@ import { Navigate } from "react-router-dom";
 import { Button, Collapse, Toast, ToastBody, ToastHeader } from "reactstrap";
 import { API_URL } from "../helper";
 import { updateCart } from "../redux/actions/userAction";
+import Swal from 'sweetalert2'
 
 
 class ProductDetail extends React.Component {
@@ -67,23 +68,30 @@ class ProductDetail extends React.Component {
                 }
             } else {
                 // alert(`Please Login first.`)
-                this.setState({
-                    toastOpen: true,
-                    toastHeader: "Add to Cart Warning",
-                    toastIcon: "warning",
-                    toastMessage: "Please Login First❗",
-                })
-
+                // this.setState({
+                //     toastOpen: true,
+                //     toastHeader: "Add to Cart Warning",
+                //     toastIcon: "warning",
+                //     toastMessage: "Please Login First❗",
+                // })
+                // Swal.fire(
+                //     'Login Success',
+                //     `Welcome ${this.props.username}`,
+                //     'success'
+                //   )
+                Swal.fire('You have to login before order')
+                
             }
-
+            
         } else {
             // alert(`Please choose Size first❗`)
-            this.setState({
-                toastOpen: true,
-                toastHeader: "Add to Cart Warning",
-                toastIcon: "warning",
-                toastMessage: "Please Choose Your Size❗",
-            })
+            // this.setState({
+            //     toastOpen: true,
+            //     toastHeader: "Add to Cart Warning",
+            //     toastIcon: "warning",
+            //     toastMessage: "Please Choose Your Size❗",
+            // })
+            Swal.fire('Please Choose Your Size❗')
         }
     }
 
